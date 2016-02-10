@@ -1,6 +1,6 @@
 ---
 title: latent.space
-layout: default
+layout: main
 ---
 
 # hello world

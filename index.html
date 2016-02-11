@@ -1,0 +1,22 @@
+---
+title: latent.space
+layout: main
+---
+<div class='container-fluid'>
+    <div class='col-md-6'>
+    </div>
+
+    <div class='col-md-6'>
+        <div class='infobox' id='listheader'>News</div>
+        <ul class='entries'>
+        {% for post in paginator.posts %}
+            <li class='entry'>
+                <div class='entry-date'>
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+                </div><div class='entry-title'>
+                <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>

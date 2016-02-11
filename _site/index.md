@@ -1,7 +1,3 @@
----
-title: latent.space
-layout: main
----
 
 # hello world
 

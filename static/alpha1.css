@@ -20,13 +20,6 @@ header .container {
     margin: 0 auto;
 }
 
-.btn {
-    background: #BBB;
-    border: 1px solid #AAA;
-    width: 32px;
-    display: block;
-}
-
 header #title {
     font-size: 24px;
 }
@@ -54,31 +47,113 @@ header a:hover {
     text-decoration: underline;
 
 }
+#menu {
+    width:100%;
+    border-bottom: 4px dotted;
+    border-color: #888;
+    background: #CCC;
+}
+
+#btn-container {
+    max-width:300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3px;
+}
+
+.btn {
+    background: #CCC;
+    border: 4px dashed #888;
+    padding: 3px 15px 3px 15px;
+    margin: 0 auto;
+}
+
+a.btn:active,
+a.btn:link,
+a.btn:active,
+a.btn:visited {
+   text-decoration: underline;
+   color: #444;
+}
+
+a.btn:hover {
+    background: #FFBB99;
+}
 
 #content{
-    max-width: 500px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
 #exp_list {
 }
-ul {
+ol, ul {
     border-left: 2px dashed;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    margin: 10 auto;
+    font-size: 40px;
+    font-weight: bold;
+}
+ul {
     list-style-type: none;
-    max-width: 450px;
 }
 li {
-    margin: 0 0 15px 0px;
+    margin: 10px 0 15px 0px;
     padding: 0 0 0 15px;
-    border-top: 2px #CCC solid;
+    /* border-top: 2px #CCC solid;
     border-bottom: 2px #CCC solid;
     border-right: 2px #CCC solid;
+    font-size:20px; */
     border-left: 4px solid;
-    font-size:20px;
 }
+
+li {
+    font-size: 20px;
+    font-weight: normal;
+}
+div > ol > li:nth-child(even) {
+    background: #EEFFDD; /* green */
+    border-right: 4px #CCC solid;
+    border-top: 4px #CCC solid;
+    border-bottom: 4px #CCC solid;
+}
+div > ol > li:nth-child(odd) {
+    background: #DDEEFF; /* blue */
+    border-right: 4px #CCC solid;
+    border-top: 4px #CCC solid;
+    border-bottom: 4px #CCC solid;
+}
+ol > li:nth-child(even) > ul > li:nth-child(odd) {
+    background: #DDEEFF;
+    border-right: 2px #CCC solid;
+    border-top: 2px #CCC solid;
+    border-bottom: 2px #CCC solid;
+}
+ol > li:nth-child(odd) > ul > li:nth-child(odd) {
+    background: #EEFFDD;
+    border-right: 2px #CCC solid;
+    border-top: 2px #CCC solid;
+    border-bottom: 2px #CCC solid;
+}
+
+li > ul > li {
+    /**/
+}
+
 #gromexname {
     text-decoration: underline;
 }
+
+h1, h2, h3 {
+    border: 1px black solid;
+    background: #DDD;
+    text-align: center;
+    margin: 10px auto;
+}
+
+
 
 .infobox {
     border: 1px black solid;

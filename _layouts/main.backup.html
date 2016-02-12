@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+<link rel='stylesheet' type='text/css' href='{{ site.url}}/static/alpha1.css'>
+<link rel="stylesheet" href="{{ site.url }}/static/bootstrap/default-no-theme/bootstrap.min.css" />
+<link rel="stylesheet" href="{{ site.url }}/static/bootstrap/fonts/font-awesome.min.css" />
+<title>latent.space</title>
+</head>
+<body>
+<header>
+      <div class="container">
+      <canvas id="space" width="400" height="164"></canvas><br>
+      </div>
+    </header>
+<div id='content'>
+{{ content }}
+</div>
+<script>
+var c = document.getElementById("space");
+var ctx = c.getContext("2d");
+var n1x=55;
+var n1y=63;
+var nodew=50;
+var sep=150;
+ctx.fillStyle = "#555";
+ctx.strokeStyle = "#555";
+ctx.beginPath();
+ctx.lineWidth=2;
+ctx.arc(n1x,n1y,nodew,0,2*Math.PI);
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(n1x+nodew,n1y);
+ctx.lineTo(n1x+nodew+sep, n1y);
+ctx.lineTo(n1x+nodew+sep-10, n1y-10);
+ctx.lineTo(n1x+nodew+sep-10, n1y+10);
+ctx.lineTo(n1x+nodew+sep, n1y);
+ctx.stroke();
+ctx.fill();
+ctx.beginPath();
+ctx.arc(n1x+nodew*2+sep,n1y,nodew,0,2*Math.PI);
+ctx.fillStyle = "#555";
+ctx.fill();
+ctx.font="20px monospace";
+ctx.fillText("latent.space", n1x+nodew, n1y-25);
+ctx.font="35px monospace";
+//ctx.fillText("Φ", n1x-11, n1y+13);
+ctx.fillStyle="#BBB";
+//ctx.fillText("X", n1x+2*nodew+sep-12, n1y+13);
+</script>
+</body>
+</html>

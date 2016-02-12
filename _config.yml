@@ -8,4 +8,3 @@ github_username:  braingineer
 language: en_US
 paginate: 10
 paginate_path: "/page/:num/"
-permalink: latent.space

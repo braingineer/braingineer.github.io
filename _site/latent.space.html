@@ -2,6 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF8">
 <link rel='stylesheet' type='text/css' href='static/alpha1.css'>
+<link rel="stylesheet" href="./embed/bootstrap/default-no-theme/bootstrap.min.css" />
+<link rel="stylesheet" href="./embed/bootstrap/fonts/font-awesome.min.css" />
 <title>latent.space</title>
 </head>
 <body>
@@ -12,6 +14,44 @@
     </header>
 <div id='content'>
 <p>Interesting.</p>
+
+<ol>
+  <li>this</li>
+  <li>is</li>
+  <li>a</li>
+  <li>numbered</li>
+  <li>list
+    <ul>
+      <li>with</li>
+      <li>some</li>
+      <li>embedding</li>
+      <li>stuff</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="infobox">Test</div>
+<ul>
+  <li>and
+    <ol>
+      <li>way cool man</li>
+      <li>=)</li>
+    </ol>
+  </li>
+  <li>a
+    <ul>
+      <li>embed one</li>
+      <li>neat</li>
+      <li>binneatos</li>
+    </ul>
+  </li>
+  <li>regular
+    <ul>
+      <li>embed two</li>
+    </ul>
+  </li>
+  <li>list</li>
+</ul>
 
 </div>
 <script>
@@ -40,11 +80,11 @@ ctx.arc(n1x+nodew*2+sep,n1y,nodew,0,2*Math.PI);
 ctx.fillStyle = "#555";
 ctx.fill();
 ctx.font="20px monospace";
-ctx.fillText("latent.space", n1x-nodew, n1y+nodew+40);
+ctx.fillText("latent.space", n1x+nodew, n1y-25);
 ctx.font="35px monospace";
-ctx.fillText("Φ", n1x-11, n1y+13);
+//ctx.fillText("Φ", n1x-11, n1y+13);
 ctx.fillStyle="#BBB";
-ctx.fillText("X", n1x+2*nodew+sep-12, n1y+13);
+//ctx.fillText("X", n1x+2*nodew+sep-12, n1y+13);
 </script>
 </body>
 </html>

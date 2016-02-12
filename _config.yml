@@ -1,8 +1,8 @@
 gems: [jekyll-paginate]
 title: latent.space
 description: "latent.space"
-# url: "http://oneohthree.github.io"
-url: "http://localhost:4000"
+#url: "http://localhost:4000"
+url: latent.space
 twitter_username: bcmcmahan
 github_username:  braingineer
 language: en_US

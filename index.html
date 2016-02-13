@@ -1,22 +1,115 @@
 ---
-title: latent.space
+index: $~
+title: root
 layout: main
 ---
-<div class='container-fluid'>
-    <div class='col-md-6'>
-    </div>
 
-    <div class='col-md-6'>
-        <div class='infobox' id='listheader'>News</div>
-        <ul class='entries'>
-        {% for post in paginator.posts %}
-            <li class='entry'>
-                <div class='entry-date'>
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-                </div><div class='entry-title'>
-                <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
-                </div>
-            </li>
+<div class='container-fluid'>
+    <div class='col-lg-6'>
+    <div class='infobox listheader no_selection posts'>Posts</div>
+        <ul class='posts entries'>
+        <li class='posts filler'>posts items hidden</li>
+        {% for post in site.posts %}
+            {% if post.categories[0] contains "posts" %}
+                <li class='posts entry'>
+                    <div class='entry-date'>
+                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+                    </div><div class='entry-title'>
+                    <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
+                    </div>
+                    {{ post.excerpt | strip_html }}
+                </li>
+            {% endif %}
         {% endfor %}
         </ul>
     </div>
+
+
+    <div class='col-lg-6'>
+
+    <div class='infobox listheader no_selection ongoing'>Ongoing</div>
+        <ul class='ongoing entries'>
+        <li class='ongoing filler'>Ongoing items hidden</li>
+        {% for post in site.posts %}
+            {% if post.categories[0] contains "ongoing" %}
+                <li class='ongoing entry'>
+                    <div class='entry-date'>
+                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+                    </div><div class='entry-title'>
+                    <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
+                    </div>
+                    {{ post.excerpt | strip_html }}
+                </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+
+    <div class='infobox listheader no_selection news'>News</div>
+        <ul class='news entries'>
+        <li class='news filler'>news items hidden</li>
+        {% for post in site.posts %}
+            {% if post.categories[0] contains "news" %}
+                <li class='news entry'>
+                    <div class='entry-date'>
+                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+                    </div><div class='entry-title'>
+                    <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
+                    </div>
+                    {{ post.excerpt | strip_html }}
+                </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+
+
+
+    </div>
+    <div class='col-lg-6'>
+    </div>
+</div>
+<script>
+var gromon = true;
+var giston = true;
+var ongon = true;
+$('.news.listheader').click(function() {
+    console.log('here0');
+    if (gromon) {
+        $('.news.entry').css('display', 'none');
+        $('.news.filler').css('display', 'initial')
+        gromon = false;
+        $('.news.listheader').html("Show posts");
+    }
+    else {
+        $('.news.entry').css('display', 'inherit');
+        $('.news.filler').css('display', 'none');
+        gromon = true;
+    }
+});
+$('.posts.listheader').click(function() {
+    console.log('here1');
+    if (giston) {
+        $('.posts.entry').css('display', 'none');
+        $('.posts.filler').css('display', 'initial')
+        giston = false;
+    }
+    else {
+        $('.posts.entry').css('display', 'inherit');
+        $('.posts.filler').css('display', 'none');
+        giston = true;
+    }
+});
+$('.ongoing.listheader').click(function() {
+    console.log('here2');
+    if (ongon) {
+        $('.ongoing.entry').css('display', 'none');
+        $('.ongoing.filler').css('display', 'initial')
+        ongon = false;
+    }
+    else {
+        $('.ongoing.entry').css('display', 'inherit');
+        $('.ongoing.filler').css('display', 'none');
+        ongon = true;
+    }
+});
+//$('.listheader').click();
+</script>

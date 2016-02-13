@@ -1,69 +1,142 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF8">
+<link rel="stylesheet" href="http://localhost:4000/static/bootstrap.css" />
+<link rel="stylesheet" href="http://localhost:4000/static/font-awesome.css" />
 <link rel='stylesheet' type='text/css' href='http://localhost:4000/static/alpha1.css'>
-<link rel="stylesheet" href="http://localhost:4000/static/bootstrap/default-no-theme/bootstrap.min.css" />
-<link rel="stylesheet" href="http://localhost:4000/static/bootstrap/fonts/font-awesome.min.css" />
+<script src="http://localhost:4000/static/jquery-2.2.0.js"></script>
+<script src="http://localhost:4000/static/headstuff.js"></script>
 <title>latent.space</title>
 </head>
 <body>
-<header>
+<div style='min-height: 100%; position: relative; padding: 0 0 100px 0;'>
+
+    <!-- HEADER -->
+    <header>
       <div class="container">
       <canvas id="space" width="400" height="164"></canvas><br>
       </div>
     </header>
-<div id='content'>
-<div class='container-fluid'>
-    <div class='col-md-6'>
-    </div>
 
-    <div class='col-md-6'>
-        <div class='infobox' id='listheader'>News</div>
-        <ul class='entries'>
+    <div id='menu'><div id='btn-container'>
+        <a href="http://localhost:4000" id='home' class='btn'>home</a>
+        <a href='http://github.com/braingineer' id='github' class='btn'>github</a>
+        <a href='#' id='cv' class='btn'>cv</a>
+        <a href='#' id='etc' class='btn'>etc</a>
+    </div></div>
+
+<!-- BODY -->
+
+    <div id='content'>
+            <h1 class='title'>
+            root
+            </h1>
+
+    <div class='container-fluid'>
+    <div class='col-lg-6'>
+    <div class='infobox listheader no_selection posts'>Posts</div>
+        <ul class='posts entries'>
+        <li class='posts filler'>posts items hidden</li>
         
-            <li class='entry'>
-                <div class='entry-date'>
-                <time datetime="2016-02-10T00:00:00-05:00">Feb 10, 2016</time>
-                </div><div class='entry-title'>
-                <a class="post-link" href="/testing/2016/02/10/testing.html">Testing the posts out</a>
-                </div>
-            </li>
+            
         
         </ul>
     </div>
 
+
+    <div class='col-lg-6'>
+
+    <div class='infobox listheader no_selection ongoing'>Ongoing</div>
+        <ul class='ongoing entries'>
+        <li class='ongoing filler'>Ongoing items hidden</li>
+        
+            
+        
+        </ul>
+
+    <div class='infobox listheader no_selection news'>News</div>
+        <ul class='news entries'>
+        <li class='news filler'>news items hidden</li>
+        
+            
+                <li class='news entry'>
+                    <div class='entry-date'>
+                    <time datetime="2016-02-12T00:00:00-05:00">Feb 12, 2016</time>
+                    </div><div class='entry-title'>
+                    <a class="post-link" href="/news/2016/02/12/init.html">blog.init()</a>
+                    </div>
+                    
+  So, I finally have a blog!
+
+
+
+                </li>
+            
+        
+        </ul>
+
+
+
+    </div>
+    <div class='col-lg-6'>
+    </div>
 </div>
 <script>
-var c = document.getElementById("space");
-var ctx = c.getContext("2d");
-var n1x=55;
-var n1y=63;
-var nodew=50;
-var sep=150;
-ctx.fillStyle = "#555";
-ctx.strokeStyle = "#555";
-ctx.beginPath();
-ctx.lineWidth=2;
-ctx.arc(n1x,n1y,nodew,0,2*Math.PI);
-ctx.stroke();
-ctx.beginPath();
-ctx.moveTo(n1x+nodew,n1y);
-ctx.lineTo(n1x+nodew+sep, n1y);
-ctx.lineTo(n1x+nodew+sep-10, n1y-10);
-ctx.lineTo(n1x+nodew+sep-10, n1y+10);
-ctx.lineTo(n1x+nodew+sep, n1y);
-ctx.stroke();
-ctx.fill();
-ctx.beginPath();
-ctx.arc(n1x+nodew*2+sep,n1y,nodew,0,2*Math.PI);
-ctx.fillStyle = "#555";
-ctx.fill();
-ctx.font="20px monospace";
-ctx.fillText("latent.space", n1x+nodew, n1y-25);
-ctx.font="35px monospace";
-//ctx.fillText("Φ", n1x-11, n1y+13);
-ctx.fillStyle="#BBB";
-//ctx.fillText("X", n1x+2*nodew+sep-12, n1y+13);
+var gromon = true;
+var giston = true;
+var ongon = true;
+$('.news.listheader').click(function() {
+    console.log('here0');
+    if (gromon) {
+        $('.news.entry').css('display', 'none');
+        $('.news.filler').css('display', 'initial')
+        gromon = false;
+        $('.news.listheader').html("Show posts");
+    }
+    else {
+        $('.news.entry').css('display', 'inherit');
+        $('.news.filler').css('display', 'none');
+        gromon = true;
+    }
+});
+$('.posts.listheader').click(function() {
+    console.log('here1');
+    if (giston) {
+        $('.posts.entry').css('display', 'none');
+        $('.posts.filler').css('display', 'initial')
+        giston = false;
+    }
+    else {
+        $('.posts.entry').css('display', 'inherit');
+        $('.posts.filler').css('display', 'none');
+        giston = true;
+    }
+});
+$('.ongoing.listheader').click(function() {
+    console.log('here2');
+    if (ongon) {
+        $('.ongoing.entry').css('display', 'none');
+        $('.ongoing.filler').css('display', 'initial')
+        ongon = false;
+    }
+    else {
+        $('.ongoing.entry').css('display', 'inherit');
+        $('.ongoing.filler').css('display', 'none');
+        ongon = true;
+    }
+});
+//$('.listheader').click();
+</script>
+
+    </div>
+
+<!-- footer -->
+
+<div id='tagline'>made by brian mcmahan</div>
+
+</div>
+<script>
+doit()
 </script>
 </body>
 </html>

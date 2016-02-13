@@ -105,6 +105,7 @@ a.btn:hover {
 
 #content.mid.post {
     max-width: 40%;
+    min-width: 400px;
 }
 
 #tagline {
